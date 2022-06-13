@@ -1,6 +1,6 @@
 package com.watanabe.hellowold;
 
-public class DateTimeConstant {
+public class DateTimeZone {
     private final String DATA_TIME = "yyyy年MM月dd日(E)HH時mm分ss秒";
     private final String JPN = "Asia/Tokyo";
     private final String CST = "Asia/Shanghai";
