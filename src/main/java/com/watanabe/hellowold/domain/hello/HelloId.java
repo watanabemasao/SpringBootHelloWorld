@@ -3,7 +3,7 @@ package com.watanabe.hellowold.domain.hello;
 public enum HelloId {
     JP("日本", "東京","こんにちは！"),
     CH("中国", "北京","你好！"),
-    US("アメリカ","ワシントンD.C.","HelloH!");
+    US("アメリカ","ワシントンD.C.","Hello!");
 
     public final String country;
     public final String capital;
