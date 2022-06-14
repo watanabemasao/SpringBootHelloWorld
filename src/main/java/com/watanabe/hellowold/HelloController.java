@@ -1,22 +1,30 @@
-package com.watanabe.hellowold;
+package com.watanabe.hellowold.web.hello;
 
+import com.watanabe.hellowold.DateTimeDisplay;
+import com.watanabe.hellowold.domain.hello.HelloEntity;
+import com.watanabe.hellowold.domain.hello.HelloId;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+import java.util.List;
+
+@Controller
 public class HelloController {
-    DateTimeDisplay dateTimeDisplay = new DateTimeDisplay();
-    @GetMapping("/hello/JPN")
-    public String hello() {
-        return "こんにちは！" + "  " + dateTimeDisplay.dateTimeJapan();
-    }
-    @GetMapping("/hello/CST")
-    public String hello2() {
-        return "你好！" + "  " + dateTimeDisplay.dateTimeShanghai();
-    }
-
-    @GetMapping("/hello/USP")
-    public String hello3() {
-        return "Hello!" + "  " + dateTimeDisplay.dateTimeUS_Pacific();
+    @GetMapping("/hello")
+    // Model コントローラと、ビューの間で値を共有するためのクラス
+    public String helloList(Model model) {
+        DateTimeDisplay dateTimeDisplay = new DateTimeDisplay();
+        var helloList = List.of(
+                new HelloEntity(HelloId.JP, HelloId.JP.country, HelloId.JP.capital,
+                        HelloId.JP.greeting(), dateTimeDisplay.dateTimeJapan()),
+                new HelloEntity(HelloId.CH, HelloId.CH.country, HelloId.CH.capital,
+                        HelloId.CH.greeting(), dateTimeDisplay.dateTimeShanghai()),
+                new HelloEntity(HelloId.US, HelloId.US.country, HelloId.US.capital,
+                        HelloId.US.greeting(), dateTimeDisplay.dateTimeUS_Pacific())
+        );
+        //Thymeleafにオブジェクトを渡す モデルのインスタンス.addAttribute("変数名", "値");
+        model.addAttribute("helloList", helloList);
+        return "list";
     }
 }

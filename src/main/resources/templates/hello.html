@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWold</title>
+</head>
+<body>
+<h1>Hello一覧</h1>
+<table>
+    <thead>
+    <tr>
+        <th>国ID</th>
+        <th>国名</th>
+        <th>首都</th>
+        <th>あいさつ</th>
+        <th>時刻</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="hello : ${helloList}">
+        <th th:text="${hello.id}">(id))</th>
+        <th th:text="${hello.country}">(country)</th>
+        <th th:text="${hello.capital}">(capital)</th>
+        <th th:text="${hello.greeting}">（greeting）</th>
+        <th th:text="${hello.time}">（time）</th>
+    <tr/>
+    </tbody>
+</table>
+
+</body>
+</html>
