@@ -1,4 +1,4 @@
-package com.watanabe.hellowold.web.hello;
+package com.watanabe.hellowold;
 
 import com.watanabe.hellowold.DateTimeDisplay;
 import com.watanabe.hellowold.domain.hello.HelloEntity;
@@ -12,18 +12,17 @@ import java.util.List;
 @Controller
 public class HelloController {
     @GetMapping("/hello")
-    // Model コントローラと、ビューの間で値を共有するためのクラス
+
     public String helloList(Model model) {
         DateTimeDisplay dateTimeDisplay = new DateTimeDisplay();
         var helloList = List.of(
                 new HelloEntity(HelloId.JP, HelloId.JP.country, HelloId.JP.capital,
-                        HelloId.JP.greeting(), dateTimeDisplay.dateTimeJapan()),
+                        HelloId.JP.greeting, dateTimeDisplay.dateTimeJapan()),
                 new HelloEntity(HelloId.CH, HelloId.CH.country, HelloId.CH.capital,
-                        HelloId.CH.greeting(), dateTimeDisplay.dateTimeShanghai()),
+                        HelloId.CH.greeting, dateTimeDisplay.dateTimeShanghai()),
                 new HelloEntity(HelloId.US, HelloId.US.country, HelloId.US.capital,
-                        HelloId.US.greeting(), dateTimeDisplay.dateTimeUS_Pacific())
+                        HelloId.US.greeting, dateTimeDisplay.dateTimeUS_Pacific())
         );
-        //Thymeleafにオブジェクトを渡す モデルのインスタンス.addAttribute("変数名", "値");
         model.addAttribute("helloList", helloList);
         return "list";
     }
