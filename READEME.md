@@ -45,4 +45,4 @@ HelloEntityを引数に取り、Listを作成しその値を**hello.html**に送
 **Thymeleaf**の機能を使い、**HelloController**で値を受け取った値をテーブル形式で表示。  
 
 ## 出力結果
-![](displaytest/hellohtmltest.png)
+![](displaytest/hello-html-test.png)

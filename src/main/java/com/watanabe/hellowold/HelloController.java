@@ -24,6 +24,6 @@ public class HelloController {
                         HelloId.US.greeting, dateTimeDisplay.dateTimeUS_Pacific())
         );
         model.addAttribute("helloList", helloList);
-        return "list";
+        return "hello";
     }
 }
