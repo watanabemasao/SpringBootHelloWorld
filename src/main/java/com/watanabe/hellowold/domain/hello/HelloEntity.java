@@ -15,24 +15,23 @@ public class HelloEntity {
         this.time = time;
     }
 
-    public HelloDefinition id() {
+    public HelloDefinition getId() {
         return id;
     }
 
-    public String country() {
+    public String getCapital() {
         return country;
     }
 
-    public String capital() {
+    public String getCountry() {
         return capital;
     }
 
-    public String greeting() {
+    public String getGreeting() {
         return greeting;
     }
 
-    public String time() {
+    public String getTime() {
         return time;
     }
-
 }
