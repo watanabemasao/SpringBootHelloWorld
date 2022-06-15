@@ -1,6 +1,6 @@
 package com.watanabe.hellowold.domain.hello;
 
-public enum HelloId {
+public enum HelloDefinition {
     JP("日本", "東京","こんにちは！"),
     CH("中国", "北京","你好！"),
     US("アメリカ","ワシントンD.C.","Hello!");
@@ -9,7 +9,7 @@ public enum HelloId {
     public final String capital;
     public final String greeting;
 
-    HelloId(String country, String capital, String greeting) {
+    HelloDefinition(String country, String capital, String greeting) {
         this.country = country;
         this.capital = capital;
         this.greeting = greeting;
