@@ -1,6 +1,6 @@
-package com.watanabe.hellowold;
+package com.watanabe.hellowold.domain.hello;
 
-import com.watanabe.hellowold.domain.hello.HelloEntity;
+import com.watanabe.hellowold.DateTimeDisplay;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import static com.watanabe.hellowold.domain.hello.Domain.*;
 @Controller
-public class HelloController {
+public class HelloHtmlController {
     @GetMapping("/hello")
     public String helloList(Model model) {
         DateTimeDisplay dateTimeDisplay = new DateTimeDisplay();
