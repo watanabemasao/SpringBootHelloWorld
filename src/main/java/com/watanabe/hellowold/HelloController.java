@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-import static com.watanabe.hellowold.domain.hello.HelloDefinition.*;
+import static com.watanabe.hellowold.domain.hello.Domain.*;
 @Controller
 public class HelloController {
     @GetMapping("/hello")
     public String helloList(Model model) {
         DateTimeDisplay dateTimeDisplay = new DateTimeDisplay();
         var helloList = List.of(
-                new HelloEntity(JP, JP.getCapital(), JP.getCountry(), JP.getGreeting(), dateTimeDisplay.dateTimeJapan()),
-                new HelloEntity(CH, CH.getCapital(), CH.getCountry(), CH.getGreeting(), dateTimeDisplay.dateTimeShanghai()),
-                new HelloEntity(US, US.getCapital(), US.getCountry(), US.getGreeting(), dateTimeDisplay.dateTimeUS_Pacific())
+                new HelloEntity(JP, "日本", "東京", "こんにちは！", dateTimeDisplay.dateTimeJapan()),
+                new HelloEntity(CH, "中国", "北京", "你好！", dateTimeDisplay.dateTimeShanghai()),
+                new HelloEntity(US, "アメリカ", "ワシントンD.C.", "Hello!", dateTimeDisplay.dateTimeUS_Pacific())
         );
         model.addAttribute("helloList", helloList);
         return "hello";
