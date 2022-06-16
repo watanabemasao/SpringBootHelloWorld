@@ -11,7 +11,7 @@ import java.util.List;
 import static com.watanabe.hellowold.domain.hello.Domain.*;
 @Controller
 public class HelloHtmlController {
-    @GetMapping("/hello")
+    @GetMapping("/hello/list")
     public String helloList(Model model) {
         DateTimeDisplay dateTimeDisplay = new DateTimeDisplay();
         var helloList = List.of(
@@ -20,6 +20,6 @@ public class HelloHtmlController {
                 new HelloEntity(US, "アメリカ", "ワシントンD.C.", "Hello!", dateTimeDisplay.dateTimeUS_Pacific())
         );
         model.addAttribute("helloList", helloList);
-        return "hello";
+        return "hello_list";
     }
 }
