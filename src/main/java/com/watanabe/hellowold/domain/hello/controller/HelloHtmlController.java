@@ -1,6 +1,7 @@
-package com.watanabe.hellowold.domain.hello;
+package com.watanabe.hellowold.domain.hello.controller;
 
 import com.watanabe.hellowold.DateTimeDisplay;
+import com.watanabe.hellowold.domain.hello.HelloEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
