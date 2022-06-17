@@ -49,4 +49,4 @@ HelloEntityを引数に取り、Listを作成しその値を**hello.html**に送
 
 
 ## 出力結果
-![](displaytest/hello-html-test.png)
+![](displaytest/DisplayResult.gif)
