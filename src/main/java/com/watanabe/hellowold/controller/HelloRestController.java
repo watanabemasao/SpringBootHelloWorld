@@ -1,10 +1,11 @@
-package com.watanabe.hellowold;
+package com.watanabe.hellowold.controller;
 
+import com.watanabe.hellowold.DateTimeDisplay;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController {
+public class HelloRestController {
     DateTimeDisplay dateTimeDisplay = new DateTimeDisplay();
     @GetMapping("/hello/JPN")
     public String hello() {

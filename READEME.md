@@ -18,9 +18,11 @@ SpringBootを使って画面にHelloWorldを表示してみる
 
 - **Spring Boot version** 2.70  
 
-- **spring-boot-starter-test** 2.67  
+- **spring-boot-starter-test** 2.70  
 
-- **spring-boot-starter-web** 2.67  
+- **spring-boot-starter-web** 2.70  
+- 
+- **Thymeleaf** 2.70
 
 ## 確認方法
 
@@ -28,17 +30,23 @@ SpringBootを使って画面にHelloWorldを表示してみる
 
 ![](displaytest/cache.properties.png)  
 
-## 追加機能  
+## 概要の説明  
+### HelloDomain
+**HelloEntity**、**HelloController**で使用するEnumを格納  
+今回Listで使用するkey。
+### HelloEntity  
+**HelloController**のListで使用するコンストラクタやgetterを格納  
+今回はJP,CH,USの国名、首都、挨拶、タイムゾーンを設定    
+### DateTimeDisplay  
+**OffsetDateTime**にて**ZoneId**を使用したタイムゾーンの取得。 
+### HelloController  
+HelloEntityを引数に取り、Listを作成しその値を**hello.html**に送る。  
+パスの値は　**"/hello/list"**  
+### HelloRestController  
+**"/hello/JPN", "/hello/CST", "/hello/USP"**　など各国ごとのパスの指定。
+### hello_list.html  
+**Thymeleaf**の機能を使い、**HelloController**で値を受け取った値をテーブル形式で表示。
 
-**OffsetDateTime**にて**ZoneId**を使用したタイムゾーンの取得。  
-
-"yyyy年MM月dd日(E)HH時mm分ss秒"形式にて出力。  
-
-HelloControllerクラスにて  
-@GetMapping("/hello/JPN")  
-@GetMapping("/hello/CST")  
-@GetMapping("/hello/UST")  
-各種出力用のメソッドを用意。  
 
 ## 出力結果
-![](displaytest/OffsetDataTime.png)
+![](displaytest/DisplayResult.gif)
