@@ -7,8 +7,8 @@ public class HelloEntity {
     private final String greeting;
     private final String time;
 
-    public HelloEntity(Domain abbreviation, String country, String capital, String greeting, String time) {
-        this.domain = abbreviation;
+    public HelloEntity(Domain domain, String country, String capital, String greeting, String time) {
+        this.domain = domain;
         this.country = country;
         this.capital = capital;
         this.greeting = greeting;
