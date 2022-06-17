@@ -1,4 +1,4 @@
-package com.watanabe.hellowold.domain.hello.controller;
+package com.watanabe.hellowold.controller;
 
 import com.watanabe.hellowold.DateTimeDisplay;
 import com.watanabe.hellowold.domain.hello.HelloEntity;
